@@ -12,7 +12,11 @@ public class Sulfuras {
         this.sellIn = sellIn;
         this.quality = quality;
     }
-
+    public void updateQuality(){
+    if (this.sellIn <= 0) {
+        this.quality = 80;
+    }
+    }
    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;

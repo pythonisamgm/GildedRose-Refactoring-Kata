@@ -13,8 +13,20 @@ public class NormalProduct {
         this.quality = quality;
     }
 
-   @Override
-   public String toString() {
+    public void updateQuality() {
+
+        this.quality--;
+        this.sellIn--;
+        if (this.sellIn < 0) {
+            this.quality--;
+        }
+        if (this.quality < 0) {
+            this.quality = 0;
+        }
+    }
+
+    @Override
+    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 }

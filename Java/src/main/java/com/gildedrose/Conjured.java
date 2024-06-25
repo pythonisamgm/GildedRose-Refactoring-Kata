@@ -15,8 +15,11 @@ public class Conjured {
 
     
     public void updateQuality(){
-        this.sellIn =-1;
-        this.quality =-2;
+        this.quality = this.quality - 2;
+        this.sellIn--;
+        if (this.quality < 0) {
+            this.quality = 0;
+        }
     }
    @Override
    public String toString() {
