@@ -194,6 +194,18 @@ class GildedRoseTest {
 
         assertEquals(4, app.items[0].quality);
     }
+    @Test
+    void check_if_conjured_items_degrades_twice_as_fast_if_sellIn_0(){
+        Item[] items = new Item[] {
+        
+            new Item("Conjured Mana Cake", 0, 6)};
+    
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertEquals(4, app.items[0].quality);
+    }
 }
 
 
