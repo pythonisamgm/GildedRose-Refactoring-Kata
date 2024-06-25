@@ -13,9 +13,12 @@ public class AgedBrie {
         this.quality = quality;
     }
     public void updateQuality(){
-        if (this.sellIn<50){}
-            this.sellIn =-1;
-            this.quality =-2;
+                         
+        this.quality ++;
+        this.sellIn --;
+        if (this.quality >50){
+            this.quality = 50;
+        }
     }
     @Override
    public String toString() {

@@ -158,6 +158,18 @@ class GildedRoseTest {
         assertEquals(50, app.items[0].quality);
     }
     @Test
+    void check_if_quality_does_not_go_below_0(){
+        Item[] items = new Item[] {
+        
+        new Item("+5 Dexterity Vest", 2, 0)};
+    
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertEquals(0, app.items[0].quality);
+    }
+    @Test
     void check_if_Sulfuras_sellIn_date_affects_quality_when_below_1(){
         Item[] items = new Item[] {
         
@@ -170,10 +182,11 @@ class GildedRoseTest {
         assertEquals(80, app.items[0].quality);
     }
     @Test
+    //not necessary
     void check_if_Sulfuras_quality_does_not_decrease_after_sellIn_date(){
         Item[] items = new Item[] {
         
-        new Item("Sulfuras, Hand of Ragnaros", 0, 80)};
+        new Item("Sulfuras, Hand of Ragnaros", 2, 80)};
     
         GildedRose app = new GildedRose(items);
 
