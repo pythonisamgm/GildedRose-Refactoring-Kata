@@ -1,18 +1,13 @@
 package com.gildedrose;
 
-public class NormalProduct {
-    public String name;
+public class NormalProduct extends Item implements IUpdateQuality{
 
-    public int sellIn;
-
-    public int quality;
 
     public NormalProduct(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
-    }
+        super(name, sellIn, quality);
 
+    }
+    @Override
     public void updateQuality() {
 
         this.quality--;

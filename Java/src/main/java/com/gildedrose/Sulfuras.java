@@ -1,17 +1,12 @@
 package com.gildedrose;
 
-public class Sulfuras {
-    public String name;
-
-    public int sellIn;
-
-    public int quality;
+public class Sulfuras extends NormalProduct{
 
     public Sulfuras(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
+        super(name, sellIn, quality);
+
     }
+    @Override
     public void updateQuality(){
     if (this.sellIn <= 0) {
         this.quality = 80;

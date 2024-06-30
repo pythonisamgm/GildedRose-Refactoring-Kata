@@ -1,19 +1,13 @@
 package com.gildedrose;
 
-public class Conjured {
-    public String name;
-
-    public int sellIn;
-
-    public int quality;
+public class Conjured extends NormalProduct{
 
     public Conjured(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
+        super(name, sellIn,quality);
+
     }
 
-    
+    @Override
     public void updateQuality(){
         this.quality = this.quality - 2;
         this.sellIn--;

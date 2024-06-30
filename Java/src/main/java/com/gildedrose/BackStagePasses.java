@@ -1,18 +1,13 @@
 package com.gildedrose;
 
-public class BackStagePasses {
-    public String name;
-
-    public int sellIn;
-
-    public int quality;
+public class BackStagePasses extends NormalProduct{
 
     public BackStagePasses(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
+        super(name, sellIn, quality);
+
     }
 
+    @Override
     public void updateQuality(){
     if (this.sellIn < 6 && this.sellIn > 0) {
         if (this.quality < 50) {

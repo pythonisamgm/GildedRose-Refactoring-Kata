@@ -1,19 +1,14 @@
 package com.gildedrose;
 
-public class AgedBrie {
-    public String name;
-
-    public int sellIn;
-
-    public int quality;
+public class AgedBrie extends NormalProduct{
 
     public AgedBrie(String name, int sellIn, int quality) {
-        this.name = "Aged Brie";
-        this.sellIn = sellIn;
-        this.quality = quality;
+        super(name, sellIn, quality);
+
     }
+    @Override
     public void updateQuality(){
-                         
+
         this.quality ++;
         this.sellIn --;
         if (this.quality >50){

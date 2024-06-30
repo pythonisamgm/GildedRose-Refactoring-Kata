@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public interface UpdateQuality {
+public interface IUpdateQuality {
 
 
     public void updateQuality();
