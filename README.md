@@ -1,53 +1,64 @@
-_Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
+# Gilded Rose Refactoring and Testing Project
 
-# Gilded Rose Refactoring Kata
+## Project Overview
 
-You can find out more about this exercise in my YouTube video [Why Developers LOVE The Gilded Rose Kata](https://youtu.be/Mt4XpGxigT4). I also have a video of a worked solution in Java - [Gilded Rose Kata, Hands-on](https://youtu.be/OdnV8hc9L7I)
+This project involved refactoring the Gilded Rose Kata code and creating comprehensive tests for its functionality. The aim was to improve code quality, readability, and maintainability while ensuring the existing functionality remains unchanged.
 
-I use this kata as part of my work as a technical coach. I wrote a lot about the coaching method I use in this book [Technical Agile Coaching with the Samman method](https://leanpub.com/techagilecoach). A while back I wrote this article ["Writing Good Tests for the Gilded Rose Kata"](http://coding-is-like-cooking.info/2013/03/writing-good-tests-for-the-gilded-rose-kata/) about how you could use this kata in a [coding dojo](https://leanpub.com/codingdojohandbook).
+## Stages of the Project
 
+### Stage 1: Initial Code Assessment
 
-## How to use this Kata
+- **Objective:** Understand the existing implementation of the `GildedRose` class and its methods.
+- **Tasks:**
+  - Reviewed the initial code to identify areas of improvement.
+  - Analyzed how different types of items are handled in the `updateQuality` method.
 
-The simplest way is to just clone the code and start hacking away improving the design. You'll want to look at the ["Gilded Rose Requirements"](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements.md) which explains what the code is for. I strongly advise you that you'll also need some tests if you want to make sure you don't break the code while you refactor.
+### Stage 2: Initial Test Creation
 
-You could write some unit tests yourself, using the requirements to identify suitable test cases. I've provided a failing unit test in a popular test framework as a starting point for most languages.
+- **Objective:** Create initial tests to ensure that the existing functionality is preserved during the refactoring process.
+- **Tasks:**
+  - Developed unit tests for various scenarios, including regular items, "Aged Brie", "Sulfuras", "Backstage passes", and "Conjured" items.
+  - Verified the correctness of the initial implementation using these tests.
 
-Alternatively, use the Approval tests provided in this repository. (Read more about that in the section "Text-based Approval Testing").
+### Stage 3: Code Refactoring
 
-The idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice taking small steps, running the tests often, and incrementally improving the design. 
+- **Objective:** Refactor the code to improve clarity, reduce complexity, and enhance maintainability.
+- **Tasks:**
+  - Extracted logic for different types of items into separate methods or classes.
+  - Simplified the `updateQuality` method by delegating responsibilities to item-specific methods or classes.
+  - Ensured that the refactored code passed all the initial tests.
 
-### Gilded Rose Requirements in other languages 
+### Stage 4: Enhancing Functionality
 
-- [English](GildedRoseRequirements.md)
-- [Español](GildedRoseRequirements_es.md)
-- [Français](GildedRoseRequirements_fr.md)
-- [Italiano](GildedRoseRequirements_it.md)
-- [日本語](GildedRoseRequirements_jp.md)
-- [Português](GildedRoseRequirements_pt-BR.md)
-- [Русский](GildedRoseRequirements_ru.txt)
-- [ไทย](GildedRoseRequirements_th.md)
-- [中文](GildedRoseRequirements_zh.txt)
-- [한국어](GildedRoseRequirements_kr.md)
-- [German](GildedRoseRequirements_de.md)
-- [Euskara](GildedRoseRequirements_eu.md)
+- **Objective:** Extend the functionality to handle additional requirements and edge cases.
+- **Tasks:**
+  - Updated the logic for "Conjured" items to degrade quality twice as fast as regular items.
+  - Introduced checks to ensure that the quality of an item is never negative and never exceeds 50, except for "Sulfuras".
 
-## Text-Based Approval Testing
+### Stage 5: Additional Refactoring
 
-Most language versions of this code have a [TextTest](https://texttest.org) fixture for Approval testing. For information about this, see the [TextTests README](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/texttests)
+- **Objective:** Further improve the design by implementing object-oriented principles.
+- **Tasks:**
+  - Created a base class for items and derived specific item classes for "Aged Brie", "Sulfuras", "Backstage passes", and "Conjured" items.
+  - Implemented an interface for updating quality and applied it to all item classes.
+  - Replaced conditional logic in the `GildedRose` class with polymorphism.
 
-## History of the exercise
+### Stage 6: Comprehensive Testing
 
-This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](https://iamnotmyself.com/refactor-this-the-gilded-rose-kata/).
+- **Objective:** Ensure complete coverage of all possible scenarios and edge cases.
+- **Tasks:**
+  - Created additional unit tests for newly introduced functionalities and edge cases.
+  - Used the tests to validate the behavior of the refactored code.
+  - Ensured all tests passed successfully, confirming that the refactoring did not introduce any regressions.
 
-I translated the original C# into a few other languages, (with a little help from my friends!), and slightly changed the starting position. This means I've actually done a small amount of refactoring already compared with the original form of the kata, and made it easier to get going with writing tests by giving you one failing unit test to start with. I also added test fixtures for Text-Based approval testing with TextTest (see [the TextTests](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/texttests))
+### Stage 7: Final Review and Documentation
 
-As Bobby Johnson points out in his article ["Why Most Solutions to Gilded Rose Miss The Bigger Picture"](https://iamnotmyself.com/why-most-solutions-to-gilded-rose-miss-the-bigger-picture/), it'll actually give you
-better practice at handling a legacy code situation if you do this Kata in the original C#. However, I think this kata
-is also really useful for practicing writing good tests using different frameworks and approaches, and the small changes I've made help with that. I think it's also interesting to compare what the refactored code and tests look like in different programming languages.
+- **Objective:** Finalize the project with thorough documentation and review.
+- **Tasks:**
+  - Conducted a code review to ensure the refactored code adheres to best practices.
+  - Documented the design decisions, explaining the rationale behind the refactoring.
+  - Prepared a comprehensive README file to guide future developers through the codebase and tests.
 
-## Contributing
+## Conclusion
 
-Contributions are encouraged! You could add a translations of the specification
-in another language or a new starting point for your favorite programming
-language. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
+The project successfully refactored the Gilded Rose Kata code, enhancing its structure, readability, and maintainability. The comprehensive tests ensure that the existing functionality is preserved and that the codebase is robust against future changes. This refactoring lays a solid foundation for further development and extension of the Gilded Rose system.
